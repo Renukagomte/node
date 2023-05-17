@@ -10,10 +10,12 @@ app.use(cors({
     credentials: true,
     origin: "http://localhost:5173"
 }))
-
+app.use(express.static("public"))
 // route
 app.use("/user", require("./routes/userRoutes"))
-
+app.use("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/index.html"))
+})
 mongoose.connection.once("open", () => {
     console.log("DB CONNECTED");
     app.listen(process.env.PORT || 5000, err => err
