@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors({
     credentials: true,
     // origin: "http://localhost:5173",
-    origin: "node-production-d85b.up.railway.app"
+    origin: "https://node-production-d85b.up.railway.app/"
 }))
 app.use(express.static("public"))
 // route
