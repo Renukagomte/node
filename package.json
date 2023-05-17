@@ -6,6 +6,10 @@
   "scripts": {
     "start": "node index"
   },
+  "engines": {
+    "node": "18.12.1",
+    "npm": "8.19.2"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
