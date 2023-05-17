@@ -16,7 +16,7 @@ app.use("/user", require("./routes/userRoutes"))
 
 mongoose.connection.once("open", () => {
     console.log("DB CONNECTED");
-    app.listen(process.env.PORT | 5000, err => err
+    app.listen(process.env.PORT || 5000, err => err
         ? console.log("COULD NOT START", err)
         : console.log("SERVER RUNNING")
     )
