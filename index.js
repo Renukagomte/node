@@ -1,6 +1,6 @@
 require("dotenv").config({ path: "./config/.env" })
 const express = require("express")
-const mongoose  = require("mongoose")
+const mongoose = require("mongoose")
 const connect = require("./config/db")
 const cors = require('cors')
 const app = express()
@@ -12,16 +12,16 @@ app.use(cors({
 }))
 
 // route
-app.use("/user",require("./routes/userRoutes"))
+app.use("/user", require("./routes/userRoutes"))
 
 mongoose.connection.once("open", () => {
     console.log("DB CONNECTED");
-    app.listen(process.env.PORT, err => err
+    app.listen(process.env.PORT | 5000, err => err
         ? console.log("COULD NOT START", err)
         : console.log("SERVER RUNNING")
     )
 })
 mongoose.connection.on("error", (err) => {
     console.log("mongo error", err);
- })
+})
 
